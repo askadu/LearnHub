@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.quantiphi.learnhub.model.Course;
 import com.quantiphi.learnhub.service.LearnHubService;
+import org.json.JSONObject;
 
 
 @Controller
@@ -24,6 +25,17 @@ public class LearnHubController {
 	@Autowired
 	LearnHubService learnHubService;
 	
+        @ResponseBody
+        @RequestMapping(value = "/amit", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+        public Object test() {
+            JSONObject json = new JSONObject();
+            json.put("name", "Amit Valse");
+            json.put("role", "Java Developer");
+            json.put("email", "amitvalse@gmail.com");
+            
+            return json;
+        }
+        
 	/**
 	 * @return ResponseEntity<List<Course>>
 	 */
