@@ -27,13 +27,13 @@ public class LearnHubController {
 	
         @ResponseBody
         @RequestMapping(value = "/amit", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-        public Object test() {
+        public String test() {
             JSONObject json = new JSONObject();
             json.put("name", "Amit Valse");
             json.put("role", "Java Developer");
             json.put("email", "amitvalse@gmail.com");
             
-            return json;
+            return json.toString();
         }
         
 	/**
